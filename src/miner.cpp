@@ -137,9 +137,10 @@ CBlockTemplate* CreateNewBlock(const CChainParams& chainparams, const CScript& s
         pblock->nVersion = ComputeBlockVersion(pindexPrev, chainparams.GetConsensus());
         // -regtest only: allow overriding block.nVersion with
         // -blockversion=N to test forking scenarios
-        if (chainparams.MineBlocksOnDemand())
+        if (chainparams.MineBlocksOnDemand()){
             pblock->nVersion = GetArg("-blockversion", pblock->nVersion);
-
+            txNew.nTime = pblock->GetBlockTime();
+	}
         int64_t nLockTimeCutoff = pblock->GetBlockTime();
 
         bool fPriorityBlock = nBlockPrioritySize > 0;
