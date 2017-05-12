@@ -110,9 +110,6 @@
      </item>
      <item row="4" column="0">
       <widget class="QCheckBox" name="stakingCheckBox">
-       <property name="enabled">
-        <bool>true</bool>
-       </property>
        <property name="toolTip">
         <string>Serves to disable the trivial sendmoney when OS account compromised. Provides no real security.</string>
        </property>
