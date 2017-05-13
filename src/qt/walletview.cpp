@@ -274,6 +274,14 @@ void WalletView::unlockWallet()
     }
 }
 
+void WalletView::lockWallet()
+{
+    if(!walletModel)
+        return;
+
+    walletModel->setWalletLocked(true);
+}
+
 unsigned long long WalletView::updateWeight()
 {
     if(!walletModel)

@@ -176,6 +176,13 @@ void WalletFrame::unlockWallet()
         walletView->unlockWallet();
 }
 
+void WalletFrame::lockWallet()
+{
+    WalletView *walletView = currentWalletView();
+    if (walletView)
+        walletView->lockWallet();
+}
+
 unsigned long long WalletFrame::updateWeight()
 {
     WalletView *walletView = currentWalletView();

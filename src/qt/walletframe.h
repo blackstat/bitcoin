@@ -74,6 +74,8 @@ public Q_SLOTS:
     /** Ask for passphrase to unlock wallet temporarily */
     void unlockWallet();
 
+    void lockWallet();
+
     unsigned long long updateWeight();
 
     /** Show used sending addresses */
