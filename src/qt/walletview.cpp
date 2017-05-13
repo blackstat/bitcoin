@@ -274,6 +274,13 @@ void WalletView::unlockWallet()
     }
 }
 
+unsigned long long WalletView::updateWeight()
+{
+    if(!walletModel)
+        return 0;
+    return walletModel->updateWeight();
+}
+
 void WalletView::usedSendingAddresses()
 {
     if(!walletModel)
