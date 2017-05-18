@@ -592,6 +592,8 @@ bool CheckKernel(CBlockIndex* pindexPrev, unsigned int nBits, int64_t nTime, con
     if (pBlockTime)
         *pBlockTime = block.GetBlockTime();
 
+    LogPrintf("looking for coinstake for real \n");
+
     return CheckStakeKernelHash(pindexPrev, nBits, new CCoins(txPrev, pindexPrev->nHeight), prevout, nTime);
 }
 

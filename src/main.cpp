@@ -1644,8 +1644,10 @@ bool ReadBlockFromDisk(CBlock& block, const CBlockIndex* pindex, const Consensus
 
 bool ReadFromDisk(CTransaction& tx, CDiskTxPos& txindex, CBlockTreeDB& txdb, COutPoint prevout)
 {
-    if (!txdb.ReadTxIndex(prevout.hash, txindex))
-        return false;
+    if (!txdb.ReadTxIndex(prevout.hash, txindex)){
+    	LogPrintf("no tx index %s \n", prevout.hash.ToString());
+    	return false;
+    }
     if (!ReadFromDisk(tx, txindex))
         return false;
     if (prevout.n >= tx.vout.size())
