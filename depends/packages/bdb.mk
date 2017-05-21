@@ -12,6 +12,7 @@ $(package)_config_opts_linux=--with-pic
 endef
 
 define $(package)_preprocess_cmds
+  sed -i -e "s/WinIoCtl.h/winioctl.h/g" src/dbinc/win_db.h && \
   sed -i.old 's/__atomic_compare_exchange/__atomic_compare_exchange_db/' src/dbinc/atomic.h
 endef
 

@@ -39,7 +39,7 @@ AC_DEFUN([BITCOIN_FIND_BDB53],[
   if test "x$bdbpath" = "xX"; then
     AC_MSG_RESULT([no])
     AC_MSG_ERROR([libdb_cxx headers missing, Bitcoin Core requires this library for wallet functionality (--disable-wallet to disable wallet functionality)])
-  elif test "x$bdb48path" = "xX"; then
+  elif test "x$bdb53path" = "xX"; then
     BITCOIN_SUBDIR_TO_INCLUDE(BDB_CPPFLAGS,[${bdbpath}],db_cxx)
     AC_ARG_WITH([incompatible-bdb],[AS_HELP_STRING([--with-incompatible-bdb], [allow using a bdb version other than 5.3])],[
       AC_MSG_WARN([Found Berkeley DB other than 5.3; wallets opened by this build will not be portable!])
