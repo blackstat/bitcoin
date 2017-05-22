@@ -2656,6 +2656,8 @@ CAmount CWallet::GetMinimumFee(unsigned int nTxBytes, unsigned int nConfirmTarge
     // But always obey the maximum
     if (nFeeNeeded > maxTxFee)
         nFeeNeeded = maxTxFee;
+    if(nFeeNeeded < DEFAULT_TRANSACTION_FEE)
+    	nFeeNeeded = DEFAULT_TRANSACTION_FEE;
     return nFeeNeeded;
 }
 
